@@ -253,6 +253,12 @@ static int route_click(Con *con, xcb_button_press_event_t *event, const bool mod
         goto done;
     }
 
+    if (dest == CLICK_DECORATION && event->detail == 2) {
+        DLOG("Closing window using middle click\n");
+        tree_close_internal(con, KILL_WINDOW, false, false);
+        goto done;
+    }
+
     /* 2: focus this con. */
     con_focus(con);
 
