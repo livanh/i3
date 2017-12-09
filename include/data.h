@@ -470,6 +470,11 @@ struct Window {
 
     /* aspect ratio from WM_NORMAL_HINTS (MPlayer uses this for example) */
     double aspect_ratio;
+
+    /** Window icon, as array of ARGB pixels */
+    unsigned char *icon;
+    int icon_width;
+    int icon_height;
 };
 
 /**
